@@ -1,163 +1,210 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Crush</title>
-    <style>
-        body {
-            font-family: 'Great Vibes', cursive; /* Romantic cursive font */
-            background: linear-gradient(to bottom, #ffe6f2, #ffb3d9); /* Soft pink gradient */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.8);
-            border-bottom: 2px solid #ff69b4;
-        }
-        h1 {
-            font-size: 3em;
-            color: #ff1493;
-        }
-        section {
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .quote {
-            font-size: 1.5em;
-            font-style: italic;
-            margin: 20px 0;
-            color: #d5007a;
-        }
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            margin: 10px;
-            border-radius: 50%;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input, textarea {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ff69b4;
-            border-radius: 5px;
-        }
-        button {
-            padding: 10px 20px;
-            background: #ff1493;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #d5007a;
-        }
-        .hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        .heart {
-            position: absolute;
-            color: #ff69b4;
-            font-size: 2em;
-            animation: float 6s infinite linear;
-        }
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-        footer {
-            padding: 20px;
-            background: #ff69b4;
-            color: white;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- For cursive font -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farewell from Ariel Borral!</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* Body & background */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFD400, #FFEA00); /* Realme yellow */
+    color: #0d0d0d;
+    overflow-y: auto; /* enable scroll */
+}
+
+/* Container with holo glass effect */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.05); /* subtle glass */
+    backdrop-filter: blur(18px);
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    border: 2px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #FFD400, #FF6F00, #FFD400);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* Signature */
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 1.4em;
+    font-family: 'Orbitron', sans-serif;
+    color: #0d0d0d; /* black for readability */
+    text-shadow: 0 0 3px #000000;
+}
+
+/* Message sections */
+.message-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    border-left: 6px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #FFD400, #FF6F00, #FFD400);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.message-section:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Black headers with subtle glow */
+.message-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #0d0d0d; /* black headers */
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 3px #000000; /* subtle glow */
+}
+
+.message-section p {
+    font-style: italic;
+    color: #0d0d0d;
+    line-height: 1.6;
+    font-size: 1.15em;
+}
+
+/* Image */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Links / buttons */
+.links {
+    margin-top: 30px;
+}
+
+a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #FFD400, #FF6F00, #FFD400);
+    color: #0d0d0d;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6), 0 0 12px rgba(0,0,0,0.4);
+}
+
+a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #0d0d0d;
+    text-shadow: 0 0 3px #000000;
+}
+
+/* Rising Goodbye Words in black */
+.rising-words {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4em;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    color: #0d0d0d; /* black */
+    text-shadow: 0 0 4px #000000, 0 0 8px #333333; /* subtle glow */
+    animation: rise 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes rise {
+    0% {opacity:0; transform:translate(-50%,-50%) scale(0.5);}
+    10% {opacity:1; transform:translate(-50%,-50%) scale(1);}
+    90% {opacity:1; transform:translate(-50%,-220px) scale(1);}
+    100% {opacity:0; transform:translate(-50%,-300px) scale(0.5);}
+}
+</style>
 </head>
 <body>
-    <div class="hearts" id="hearts"></div> <!-- Floating hearts animation -->
-    <header>
-        <h1>A Page Just for You</h1>
-        <p>Because you make my heart skip a beat.</p>
-    </header>
 
-    <section id="intro">
-        <h2>About This Page</h2>
-        <p>Hi [Crush's Name], I've created this little space to share how much you mean to me. Hope it brings a smile!</p>
-    </section>
+<div class="container">
+    <p>
+        Dear Team Break Time,<br><br>
+        As I bid farewell, I want to thank each of you for the laughter, teamwork, and memories we’ve shared. Working with this team has been a privilege — your dedication and positivity have always inspired me.<br><br>
+        Remember, every challenge is an opportunity, and every ending is just the beginning of something new. Keep supporting each other, keep pushing boundaries, and never forget to take a moment for yourselves — even in the busiest days.<br><br>
+        Though I’m moving on, the lessons and friendships I’ve gained here will always stay with me. Wishing you all continued success, growth, and happiness.<br><br>
+        With gratitude and warmest wishes,
+    </p>
 
-    <section id="quotes">
-        <h2>Quotes from the Heart</h2>
-        <div class="quote" id="quote-display">"You are my sunshine, my only sunshine." – Jimmie Davis</div>
-    </section>
+    <p class="signature">Ariel Borral</p>
 
-    <section id="gallery">
-        <h2>Memories</h2>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/200x200/ff69b4/ffffff?text=Memory+1" alt="Memory 1">
-            <img src="https://via.placeholder.com/200x200/ff1493/ffffff?text=Memory+2" alt="Memory 2">
-            <img src="https://via.placeholder.com/200x200/d5007a/ffffff?text=Memory+3" alt="Memory 3">
-        </div>
-        <p>Replace these with your favorite photos!</p>
-    </section>
+    <img src="https://via.placeholder.com/600x400?text=Team+Memories" alt="Team photo">
 
-    <section id="contact">
-        <h2>Leave a Message</h2>
-        <form action="#" method="post"> <!-- Placeholder; use a service like Formspree for real submission -->
-            <input type="text" name="name" placeholder="Your Name" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+    <!-- Messages -->
+    <div class="message-section">
+        <h2>Simple at Heartfelt</h2>
+        <p>“Goodbyes are not forever, nor the end; they simply mean I’ll miss you until we meet again.”</p>
+    </div>
 
-    <footer>
-        <p>Made with ❤️ just for you.</p>
-    </footer>
+    <div class="message-section">
+        <h2>Friendly and Warm</h2>
+        <p>“It’s been a pleasure working with you all. Thank you for the memories, the laughter, and the teamwork. Until we meet again!”</p>
+    </div>
 
-    <script>
-        // Floating hearts animation
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDelay = Math.random() * 6 + 's';
-            document.getElementById('hearts').appendChild(heart);
-            setTimeout(() => heart.remove(), 6000);
-        }
-        setInterval(createHeart, 500);
+    <div class="message-section">
+        <h2>Light and Fun</h2>
+        <p>“Farewell, team! Keep in touch, and don’t forget to laugh even on Monday mornings 😉.”</p>
+    </div>
 
-        // Quote rotator
-        const quotes = [
-            "\"You are my sunshine, my only sunshine.\" – Jimmie Davis",
-            "\"In your eyes, I found my favorite color.\" – Unknown",
-            "\"Love is not about how many days, months, or years you have been together. Love is about how much you love each other every single day.\" – Unknown",
-            "\"You stole my heart, but I'll let you keep it.\" – Unknown"
-        ];
-        let quoteIndex = 0;
-        setInterval(() => {
-            document.getElementById('quote-display').innerHTML = quotes[quoteIndex];
-            quoteIndex = (quoteIndex + 1) % quotes.length;
-        }, 5000);
-    </script>
+    <div class="message-section">
+        <h2>Inspirational</h2>
+        <p>“Every ending is a new beginning. I’m grateful for the time we shared, and I wish you all the best on your journeys ahead.”</p>
+    </div>
+
+    <div class="message-section">
+        <h2>Short and Sweet</h2>
+        <p>“Thanks for the memories. Goodbye for now, but not forever.”</p>
+    </div>
+
+    <!-- Contact Links -->
+    <p>Keep in touch! Here's my realmeph@gmail.com: 09999999999.</p>
+    <div class="links">
+        <a href="mailto:[your-email]">Email Me</a>
+        <a href="https://linkedin.com/in/[your-profile]">LinkedIn</a>
+        <a href="https://twitter.com/[your-handle]">Twitter</a>
+    </div>
+
+    <footer>Cheers to the future! 🚀</footer>
+
+    <!-- Rising holo words -->
+    <div class="rising-words">Goodbye...</div>
+</div>
+
 </body>
 </html>
